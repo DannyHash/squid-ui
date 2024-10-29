@@ -19,7 +19,7 @@ const Navbar = () => {
               <span className="text-xl tracking-tight">Squid</span>
             </div>
 
-            <ul className="hidden md:flex lg:flex ml-14 space-x-6">
+            <ul className="hidden lg:flex ml-14 space-x-6">
               {navItems.map((item, index) => (
                 <li key={index}>
                   <a
@@ -35,7 +35,25 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
+
+            <div className="lg:hidden md:flex flex-col justify-end">
+              <button onClick={toggleNavbar}>
+                {mobileDrawerOpen ? <X /> : <Menu />}
+              </button>
+            </div>
           </div>
+
+          {mobileDrawerOpen && (
+            <div className="fixed right-0 z-20 bg-neutral-900 w-full p-12 flex flex-col justify-center items-center lg:hidden">
+              <ul>
+                {navItems.map((item, index) => (
+                  <li key={index} className="py-4">
+                    <a href={item.href}>{item.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </nav>
     </>
