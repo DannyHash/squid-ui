@@ -1,4 +1,5 @@
 import Hero from "./components/Hero";
+import HeroTemplate from "./components/HeroTemplate";
 import Navbar from "./components/Navbar";
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
           <Hero />
         </div>
       </div>
+      <HeroTemplate />
     </>
   );
 };
